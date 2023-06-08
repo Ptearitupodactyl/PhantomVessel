@@ -25,8 +25,6 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {   //Applies input and speed
         rb.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-
-        //Has the player look at the mouse
         Vector3 ObjPos = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 dir = Input.mousePosition - ObjPos;
         float rotZ = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;

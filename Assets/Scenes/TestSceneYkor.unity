@@ -299,10 +299,9 @@ GameObject:
   - component: {fileID: 1608911631}
 >>>>>>> main:Assets/TEST SCENE.unity
   - component: {fileID: 1608911628}
-  - component: {fileID: 1608911632}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,6 +463,7 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+<<<<<<< HEAD:Assets/Scenes/TestSceneYkor.unity
 --- !u!114 &1608911632
 MonoBehaviour:
 >>>>>>> main:Assets/TEST SCENE.unity
@@ -584,6 +584,8 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> main:Assets/TEST SCENE.unity
+=======
+>>>>>>> parent of 6d4deb6 (Minor Changes):Assets/TEST SCENE.unity
 --- !u!1 &1811051373
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +755,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+<<<<<<< HEAD:Assets/Scenes/TestSceneYkor.unity
 --- !u!1 &1819923436
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +877,8 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.50000006
 >>>>>>> main:Assets/TEST SCENE.unity
+=======
+>>>>>>> parent of 6d4deb6 (Minor Changes):Assets/TEST SCENE.unity
 --- !u!1 &2002866925
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +892,7 @@ GameObject:
   - component: {fileID: 2002866926}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -979,7 +984,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
