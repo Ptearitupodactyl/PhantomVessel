@@ -6,14 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public float delay = 5f;
 
+
     
     private void Start()
     {
         StartCoroutine(DestroyAfterTime());
-         
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)//Checks what the bullets hits
     {
         if (collision.gameObject.tag == "Wall")

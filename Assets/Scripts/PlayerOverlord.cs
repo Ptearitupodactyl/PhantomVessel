@@ -26,7 +26,7 @@ public class PlayerOverlord : MonoBehaviour
                 spriteRen.color = Color.red;
                 Destroy(collision.gameObject);
                 hasGun = true;
-                heldGun = "ShotGun";
+                heldGun = "Shotgun";
                 ammo = 1f;
             }
             if (weapon.weaponName == "Pistol")
@@ -48,22 +48,17 @@ public class PlayerOverlord : MonoBehaviour
     float forceMagnitude = 10;
 
     void Update()
-    {
+    {       
         if (Input.GetMouseButtonDown(0) && hasGun == true) //Shoots gun if the player has one
         {
-            if (heldGun == "ShotGun")
+            
+            if (heldGun == "Shotgun")
             {
-                myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
-                rb = myProjectile.GetComponent<Rigidbody2D>();
-                rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
-                ammo -= 1f;
+                Shotgun();
             }
             if (heldGun == "Pistol")
             {
-                myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
-                rb = myProjectile.GetComponent<Rigidbody2D>();
-                rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
-                ammo -= 1f;
+                Pistol();
             }
             
         }
@@ -73,5 +68,20 @@ public class PlayerOverlord : MonoBehaviour
             spriteRen.color = Color.white;
             hasGun = false;
         }
+    }
+
+    public void Shotgun ()
+    {
+        myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
+        rb = myProjectile.GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
+        ammo -= 1f;
+    }
+    public void Pistol ()
+    {
+        myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
+        rb = myProjectile.GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
+        ammo -= 1f;
     }
 }

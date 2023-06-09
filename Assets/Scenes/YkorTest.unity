@@ -317,8 +317,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b0ea8288b542c4498e1e46e1eedf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coneSize: 2
   firePoint: {fileID: 1600127047}
   projectile: {fileID: 6394030786799108898, guid: 156460cef86f2854b92404b354bb63fa, type: 3}
+  forceMagnitude: 10
 --- !u!1 &340346300
 GameObject:
   m_ObjectHideFlags: 0
