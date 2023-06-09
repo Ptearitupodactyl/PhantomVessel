@@ -13,7 +13,7 @@ public class PlayerOverlord : MonoBehaviour
 
     public void Start()
     {
-        spriteRen = GetComponent<SpriteRenderer>();
+        spriteRen = GetComponent<SpriteRenderer>();//Gets sprite renderer
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -33,11 +33,11 @@ public class PlayerOverlord : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && hasGun == true)
+        if (Input.GetMouseButtonDown(0) && hasGun == true) //Shoots gun if the player has one
         {
-               myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;
+               myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
                rb = myProjectile.GetComponent<Rigidbody2D>();
-               rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);
+               rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
         }
     }
 }
