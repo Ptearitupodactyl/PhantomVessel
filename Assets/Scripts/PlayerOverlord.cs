@@ -6,6 +6,7 @@ public class PlayerOverlord : MonoBehaviour
 {
 
     SpriteRenderer spriteRen;
+    bool hasGun;
 
     
 
@@ -20,6 +21,7 @@ public class PlayerOverlord : MonoBehaviour
         {
             spriteRen.color = Color.red;
             Destroy(collision.gameObject);
+            hasGun = true;
         }
     }
 
@@ -27,11 +29,11 @@ public class PlayerOverlord : MonoBehaviour
     public GameObject projectile;
     GameObject myProjectile;
     Rigidbody2D rb;
-    float forceMagnitude = 5;
+    float forceMagnitude = 10;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && hasGun == true)
         {
                myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;
                rb = myProjectile.GetComponent<Rigidbody2D>();
