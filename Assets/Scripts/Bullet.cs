@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float delay = 5f;
+
+    
     private void Start()
     {
-        InvokeRepeating("DestroyAfterTime", 15f, 60f);//Starts a timer that destroys the bullet after a certain amount time
+        StartCoroutine(DestroyAfterTime());
+         
     }
 
 
@@ -17,8 +21,9 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void DestroyAfterTime()
+    IEnumerator DestroyAfterTime()
     {
+        yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
 }
