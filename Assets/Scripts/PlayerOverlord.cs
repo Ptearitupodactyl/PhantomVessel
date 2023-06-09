@@ -7,8 +7,8 @@ public class PlayerOverlord : MonoBehaviour
 
     SpriteRenderer spriteRen;
 
-    public GameObject firePoint;
-    public GameObject bulletPrefab;
+    
+
 
     public void Start()
     {
@@ -23,11 +23,19 @@ public class PlayerOverlord : MonoBehaviour
         }
     }
 
-    public void Update()
+    public GameObject firePoint;
+    public GameObject projectile;
+    GameObject myProjectile;
+    Rigidbody2D rb;
+    float forceMagnitude = 5;
+
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bulletPrefab, firePoint.transform);
+               myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;
+               rb = myProjectile.GetComponent<Rigidbody2D>();
+               rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);
         }
     }
 }

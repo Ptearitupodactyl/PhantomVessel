@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        InvokeRepeating("DestroyAfterTime", 15f, 60f);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
+    void DestroyAfterTime()
+    {
+        Destroy(gameObject);
     }
 }
