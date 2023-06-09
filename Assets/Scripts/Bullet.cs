@@ -7,14 +7,14 @@ public class Bullet : MonoBehaviour
     public float delay = 5f;
     public int damage = 1;
 
+
     private void Start()
     {
         StartCoroutine(DestroyAfterTime());
-         
     }
 
-
     void OnTriggerEnter2D(Collider2D other) //Checks to see if it is colliding with an object
+
     {
         if (other.gameObject.tag == "Enemy") //Checks to see if it is colliding with anything tagged as an enemy
         {
