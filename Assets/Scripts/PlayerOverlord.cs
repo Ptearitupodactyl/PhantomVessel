@@ -6,9 +6,11 @@ public class PlayerOverlord : MonoBehaviour
 {
 
     SpriteRenderer spriteRen;
+    [SerializeField]
     bool hasGun;
 
-    float ammo;
+    public float ammo;
+    [SerializeField]
     string heldGun;
 
 
@@ -45,6 +47,7 @@ public class PlayerOverlord : MonoBehaviour
     public GameObject projectile;
     GameObject myProjectile;
     Rigidbody2D rb;
+    [SerializeField]
     float forceMagnitude = 10;
 
     void Update()
@@ -63,21 +66,21 @@ public class PlayerOverlord : MonoBehaviour
             
         }
 
-        if (ammo <= 0f)
+        if (ammo <= 0f) //Checks if the ammo in the gun is depleted and deletes its
         {
             spriteRen.color = Color.white;
             hasGun = false;
         }
     }
 
-    public void Shotgun ()
+    public void Shotgun ()//Shoots shotgun
     {
         myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
         rb = myProjectile.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
         ammo -= 1f;
     }
-    public void Pistol ()
+    public void Pistol ()//Shoots pistol
     {
         myProjectile = Instantiate(projectile, firePoint.transform.position, Quaternion.identity) as GameObject;//Spawns the bullets
         rb = myProjectile.GetComponent<Rigidbody2D>();
