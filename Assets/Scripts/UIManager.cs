@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f;//Makes sure time is working
     }
     public void Update()
     {
