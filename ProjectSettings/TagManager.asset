@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Enemy
   - Bullet
+  - SwapItem
   layers:
   - Default
   - TransparentFX
