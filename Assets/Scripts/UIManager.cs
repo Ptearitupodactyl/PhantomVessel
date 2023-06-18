@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
     GameObject pauseMenu;
     public static bool paused = false;
     [SerializeField]
+    GameObject settingsMenu;
+    [SerializeField]
+    GameObject keyBindsMenu;
+    [SerializeField]
     GameObject stageClear;
 
 
@@ -61,6 +65,22 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
+    }
+    public void OpenSettings()//Pauses time brings up the menu
+    {
+        settingsMenu.SetActive(true);
+    }
+    public void CloseSettings()//Unpauses
+    {
+        settingsMenu.SetActive(false);
+    }
+    public void OpenKeyBinds()//Pauses time brings up the menu
+    {
+        keyBindsMenu.SetActive(true);
+    }
+    public void CloseKeyBinds()//Unpauses
+    {
+        keyBindsMenu.SetActive(false);
     }
     public void QuitGame ()//<<
     {
