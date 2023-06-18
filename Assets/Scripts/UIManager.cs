@@ -54,39 +54,39 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void Pause()//Pauses time brings up the menu
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
     }
-    public void UnPause ()//Unpauses
+    public void UnPause ()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
     }
-    public void OpenSettings()//Pauses time brings up the menu
+    public void OpenSettings()
     {
         settingsMenu.SetActive(true);
     }
-    public void CloseSettings()//Unpauses
+    public void CloseSettings()
     {
         settingsMenu.SetActive(false);
     }
-    public void OpenKeyBinds()//Pauses time brings up the menu
+    public void OpenKeyBinds()
     {
         keyBindsMenu.SetActive(true);
     }
-    public void CloseKeyBinds()//Unpauses
+    public void CloseKeyBinds()
     {
         keyBindsMenu.SetActive(false);
     }
-    public void QuitGame ()//<<
+    public void QuitGame ()
     {
         Application.Quit();
     }
-    public void StageClear ()//Shows up when the stage clear of all enemies
+    public void StageClear ()
     {
         stageClear.SetActive(true);
         Time.timeScale = 0f;

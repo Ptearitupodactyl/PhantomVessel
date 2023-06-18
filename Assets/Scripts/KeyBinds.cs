@@ -14,7 +14,7 @@ public class KeyBinds : MonoBehaviour
 
     void Start()
     {
-        keyBinds.Add("Up", KeyCode.W);
+        keyBinds.Add("Up", KeyCode.W); //Adds to the dictonary
         keyBinds.Add("Down", KeyCode.S);
         keyBinds.Add("Left", KeyCode.A);
         keyBinds.Add("Right", KeyCode.D);
@@ -30,7 +30,7 @@ public class KeyBinds : MonoBehaviour
 
     private void OnGUI()
     {
-        if (currentKey != null)
+        if (currentKey != null) //Checks which key you are trying to change
         {
             Event e = Event.current;
             if (e.isKey)
@@ -42,7 +42,7 @@ public class KeyBinds : MonoBehaviour
         }
     }
 
-    public void ChangeKey (GameObject clicked)
+    public void ChangeKey (GameObject clicked)//Changes the selected keybind to the next key you press
     {
         currentKey = clicked;
         Debug.Log(clicked.ToString());
