@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SpiritShot : MonoBehaviour
+public class SwapAbility : MonoBehaviour
 {
     public GameObject swapItem;
     void Update () {
