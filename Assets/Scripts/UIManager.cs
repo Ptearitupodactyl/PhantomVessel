@@ -16,12 +16,16 @@ public class UIManager : MonoBehaviour
     GameObject pauseMenu;
     public static bool paused = false;
     [SerializeField]
+    GameObject settingsMenu;
+    [SerializeField]
+    GameObject keyBindsMenu;
+    [SerializeField]
     GameObject stageClear;
 
 
     public void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f;//Makes sure time is working
     }
     public void Update()
     {
@@ -50,23 +54,39 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void Pause()//Pauses time brings up the menu
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
     }
-    public void UnPause ()//Unpauses
+    public void UnPause ()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
     }
-    public void QuitGame ()//<<
+    public void OpenSettings()
+    {
+        settingsMenu.SetActive(true);
+    }
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
+    }
+    public void OpenKeyBinds()
+    {
+        keyBindsMenu.SetActive(true);
+    }
+    public void CloseKeyBinds()
+    {
+        keyBindsMenu.SetActive(false);
+    }
+    public void QuitGame ()
     {
         Application.Quit();
     }
-    public void StageClear ()//Shows up when the stage clear of all enemies
+    public void StageClear ()
     {
         stageClear.SetActive(true);
         Time.timeScale = 0f;
