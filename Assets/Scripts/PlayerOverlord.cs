@@ -23,19 +23,17 @@ public class PlayerOverlord : MonoBehaviour
         if (collision.gameObject.tag == "Weapon" && Input.GetKey("e")) //Detects if the player is over a weapon and detects input
         {
             WeaponAssign weapon = collision.gameObject.GetComponent<WeaponAssign>();
+            hasGun = true;
+            Destroy(collision.gameObject);
             if (weapon.weaponName == "Shotgun")
             {
                 spriteRen.color = Color.red;
-                Destroy(collision.gameObject);
-                hasGun = true;
                 heldGun = "Shotgun";
-                ammo = 1f;
+                ammo = weapon.ammoCount;
             }
             if (weapon.weaponName == "Pistol")
             {
                 spriteRen.color = Color.blue;
-                Destroy(collision.gameObject);
-                hasGun = true;
                 heldGun = "Pistol";
                 ammo = 1f;
             }
@@ -87,4 +85,5 @@ public class PlayerOverlord : MonoBehaviour
         rb.AddForce(transform.up * forceMagnitude, ForceMode2D.Impulse);//Makes the bullet fly
         ammo -= 1f;
     }
+
 }
